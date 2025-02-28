@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Text Emotion Detection</h1>
+    <form method="POST" action="/">
+        <textarea name="text" rows="5" cols="50" placeholder="Enter your text here..." required></textarea>
+        <br>
+        <button type="submit">Predict Emotion</button>
+    </form>
+
+    {% if emotion %}
+    <div>
+        <h2>Predicted Emotion</h2>
+        <p>{{ emotion }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
